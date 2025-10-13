@@ -1,5 +1,5 @@
 import 'package:e_commerce_dashboard/core/helper_funcation/on_generate_route.dart';
-import 'package:e_commerce_dashboard/features/dashboard/views/dashboaed_view.dart';
+import 'package:e_commerce_dashboard/features/dashboard/presentation/views/dashboaed_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {

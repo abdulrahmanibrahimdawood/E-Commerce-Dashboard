@@ -17,15 +17,6 @@ class _IsFeaturedCheckBoxState extends State<IsFeaturedCheckBox> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CustomCheckBox(
-          onChecked: (value) {
-            isTermsAccepted = value;
-            widget.onChanged(value);
-            setState(() {});
-          },
-          isChecked: isTermsAccepted,
-        ),
-        const SizedBox(width: 16),
         Expanded(
           child: Text.rich(
             TextSpan(
@@ -38,8 +29,15 @@ class _IsFeaturedCheckBoxState extends State<IsFeaturedCheckBox> {
                 ),
               ],
             ),
-            textAlign: TextAlign.right,
           ),
+        ),
+        CustomCheckBox(
+          onChecked: (value) {
+            isTermsAccepted = value;
+            widget.onChanged(value);
+            setState(() {});
+          },
+          isChecked: isTermsAccepted,
         ),
       ],
     );

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-class AddProductInputIntity {
+class AddProductInputEntity {
   final String name;
   final String code;
   final String description;
@@ -9,7 +9,7 @@ class AddProductInputIntity {
   final File image;
   final String? imageUrl;
 
-  AddProductInputIntity({
+  AddProductInputEntity({
     this.imageUrl,
     required this.name,
     required this.description,

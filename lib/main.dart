@@ -7,11 +7,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() async {
-  setupGetIt();
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Bloc.observer = CustomBlocObserver();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  setupGetIt();
+  Bloc.observer = CustomBlocObserver();
   runApp(const ECommerceDashBoard());
 }
 

@@ -6,6 +6,7 @@ import 'package:e_commerce_dashboard/features/add_product/domain/entites/add_pro
 import 'package:e_commerce_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentation/views/widgets/image_field.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentation/views/widgets/is_featured_check_box.dart';
+import 'package:e_commerce_dashboard/features/add_product/presentation/views/widgets/is_organic_check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,9 +22,10 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   late String name, code, description;
-  late num price;
+  late num price, expirationMonths, numberOfCalories, unitAmount;
   File? image;
   bool isFeatured = false;
+  bool isOrganic = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -52,6 +54,30 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
               SizedBox(height: 16),
               CustomTextFormField(
                 onSaved: (value) {
+                  expirationMonths = num.parse(value!);
+                },
+                hintText: 'Expiration Months',
+                textInputType: TextInputType.number,
+              ),
+              SizedBox(height: 16),
+              CustomTextFormField(
+                onSaved: (value) {
+                  numberOfCalories = num.parse(value!);
+                },
+                hintText: 'Number Of Calories',
+                textInputType: TextInputType.number,
+              ),
+              SizedBox(height: 16),
+              CustomTextFormField(
+                onSaved: (value) {
+                  unitAmount = num.parse(value!);
+                },
+                hintText: 'Unit Amount',
+                textInputType: TextInputType.number,
+              ),
+              SizedBox(height: 16),
+              CustomTextFormField(
+                onSaved: (value) {
                   code = value!.toLowerCase();
                 },
                 hintText: 'Product Code',
@@ -65,6 +91,18 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 hintText: 'Product Description',
                 textInputType: TextInputType.text,
                 maxLines: 5,
+              ),
+              SizedBox(height: 16),
+              IsFeaturedCheckBox(
+                onChanged: (value) {
+                  isFeatured = value;
+                },
+              ),
+              SizedBox(height: 16),
+              IsOrganicCheckBox(
+                onChanged: (value) {
+                  isOrganic = value;
+                },
               ),
               SizedBox(height: 16),
               IsFeaturedCheckBox(
@@ -87,7 +125,11 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                       _formKey.currentState!.save();
                       AddProductInputEntity input = AddProductInputEntity(
                         name: name,
+                        expirationMonths: expirationMonths.toInt(),
+                        numberOfCalories: numberOfCalories.toInt(),
+                        unitAmount: unitAmount.toInt(),
                         code: code,
+                        isOrganic: isOrganic,
                         description: description,
                         price: price,
                         image: image!,

@@ -105,12 +105,6 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 },
               ),
               SizedBox(height: 16),
-              IsFeaturedCheckBox(
-                onChanged: (value) {
-                  isFeatured = value;
-                },
-              ),
-              SizedBox(height: 16),
               ImageField(
                 onFileChange: (image) {
                   this.image = image;
@@ -124,6 +118,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
                       AddProductInputEntity input = AddProductInputEntity(
+                        reviews: [],
                         name: name,
                         expirationMonths: expirationMonths.toInt(),
                         numberOfCalories: numberOfCalories.toInt(),

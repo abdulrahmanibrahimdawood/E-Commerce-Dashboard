@@ -1,0 +1,3 @@
+const kSupabaseUrl = 'https://skzbelzesdrnxhsthsat.supabase.co';
+const kSupabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNremJlbHplc2Rybnhoc3Roc2F0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA5NjE1NzQsImV4cCI6MjA3NjUzNzU3NH0.U5hDukmqmVgITL1_Z6DP6xxSnjVKRqBBnh-QlmfzAhI';

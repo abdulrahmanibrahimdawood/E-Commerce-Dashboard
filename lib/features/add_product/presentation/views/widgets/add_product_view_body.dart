@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:e_commerce_dashboard/core/widgets/custom_button.dart';
 import 'package:e_commerce_dashboard/core/widgets/custom_text_form_field.dart';
-import 'package:e_commerce_dashboard/features/add_product/domain/entites/add_product_input_entity.dart';
+import 'package:e_commerce_dashboard/features/add_product/domain/entites/product_entity.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentation/views/widgets/image_field.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentation/views/widgets/is_featured_check_box.dart';
@@ -117,7 +117,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   if (image != null) {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      AddProductInputEntity input = AddProductInputEntity(
+                      ProductEntity input = ProductEntity(
                         reviews: [],
                         name: name,
                         expirationMonths: expirationMonths.toInt(),

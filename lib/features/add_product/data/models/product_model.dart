@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:e_commerce_dashboard/features/add_product/data/models/review_model.dart';
-import 'package:e_commerce_dashboard/features/add_product/domain/entites/add_product_input_entity.dart';
+import 'package:e_commerce_dashboard/features/add_product/domain/entites/product_entity.dart';
 
-class AddProductInputModel {
+class ProductModel {
   final String name;
   final String code;
   final String description;
@@ -19,7 +19,7 @@ class AddProductInputModel {
   final num ratingCount = 0;
   final List<ReviewModel> reviews;
 
-  AddProductInputModel({
+  ProductModel({
     this.imageUrl,
     required this.numberOfCalories,
     required this.isOrganic,
@@ -33,24 +33,23 @@ class AddProductInputModel {
     required this.isFeatured,
     required this.image,
   });
-  factory AddProductInputModel.fromEntity(
-    AddProductInputEntity addProductInputEntity,
-  ) => AddProductInputModel(
-    reviews: addProductInputEntity.reviews
-        .map((e) => ReviewModel.fromEntity(e))
-        .toList(),
-    isOrganic: addProductInputEntity.isOrganic,
-    imageUrl: addProductInputEntity.imageUrl,
-    name: addProductInputEntity.name,
-    description: addProductInputEntity.description,
-    code: addProductInputEntity.code,
-    price: addProductInputEntity.price,
-    isFeatured: addProductInputEntity.isFeatured,
-    image: addProductInputEntity.image,
-    numberOfCalories: addProductInputEntity.numberOfCalories,
-    unitAmount: addProductInputEntity.unitAmount,
-    expirationMonths: addProductInputEntity.expirationMonths,
-  );
+  factory ProductModel.fromEntity(ProductEntity addProductInputEntity) =>
+      ProductModel(
+        reviews: addProductInputEntity.reviews
+            .map((e) => ReviewModel.fromEntity(e))
+            .toList(),
+        isOrganic: addProductInputEntity.isOrganic,
+        imageUrl: addProductInputEntity.imageUrl,
+        name: addProductInputEntity.name,
+        description: addProductInputEntity.description,
+        code: addProductInputEntity.code,
+        price: addProductInputEntity.price,
+        isFeatured: addProductInputEntity.isFeatured,
+        image: addProductInputEntity.image,
+        numberOfCalories: addProductInputEntity.numberOfCalories,
+        unitAmount: addProductInputEntity.unitAmount,
+        expirationMonths: addProductInputEntity.expirationMonths,
+      );
   toJson() {
     return {
       'name': name,

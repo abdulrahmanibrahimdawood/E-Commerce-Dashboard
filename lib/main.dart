@@ -11,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SupabaseStorageService.initSupabase();
+  await SupabaseStorageService.createBuckets('products_images');
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setupGetIt();
   Bloc.observer = CustomBlocObserver();

@@ -15,6 +15,7 @@ class ProductModel {
   bool isOrganic;
   final int numberOfCalories;
   final int unitAmount;
+  final int sellingCount;
   final num avgRating = 0;
   final num ratingCount = 0;
   final List<ReviewModel> reviews;
@@ -28,6 +29,7 @@ class ProductModel {
     required this.expirationMonths,
     required this.name,
     required this.description,
+    this.sellingCount = 0,
     required this.code,
     required this.price,
     required this.isFeatured,
@@ -63,6 +65,7 @@ class ProductModel {
       'expirationMonths': expirationMonths,
       'isOrganic': isOrganic,
       'reviews': reviews.map((e) => e.toJson()).toList(),
+      'sellingCount': sellingCount,
     };
   }
 }

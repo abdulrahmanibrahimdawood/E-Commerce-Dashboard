@@ -1,6 +1,6 @@
 import 'package:e_commerce_dashboard/core/helper_funcation/get_order_dummy_data.dart';
 import 'package:e_commerce_dashboard/features/orders/presentation/views/widgets/filter_section.dart';
-import 'package:e_commerce_dashboard/features/orders/presentation/views/widgets/order_item.dart';
+import 'package:e_commerce_dashboard/features/orders/presentation/views/widgets/orders_item_list_view.dart';
 import 'package:flutter/material.dart';
 
 class OrdersViewBody extends StatelessWidget {
@@ -15,7 +15,11 @@ class OrdersViewBody extends StatelessWidget {
           SizedBox(height: 24),
           FilterSection(),
           SizedBox(height: 16),
-          OrderItemWidget(orderModel: getDummyOrder()),
+          Expanded(
+            child: OrdersItemListView(
+              orderModels: [getDummyOrder(), getDummyOrder(), getDummyOrder()],
+            ),
+          ),
         ],
       ),
     );

@@ -12,7 +12,7 @@ final getIt = GetIt.instance;
 
 void setupGetIt() {
   getIt.registerSingleton<StorageService>(SupabaseStorageService());
-  getIt.registerSingleton<DatabaseServices>(FirestoreServices());
+  getIt.registerSingleton<DatabaseServices>(FireStoreServices());
 
   getIt.registerSingleton<ImagesRepo>(
     ImagesRepoImpl(storageService: getIt.get<StorageService>()),

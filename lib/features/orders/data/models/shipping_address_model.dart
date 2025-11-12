@@ -1,3 +1,5 @@
+import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/shipping_address_entity.dart';
+
 class ShippingAddressModel {
   String? name;
   String? phone;
@@ -33,5 +35,16 @@ class ShippingAddressModel {
       'email': email,
       'floor': floor,
     };
+  }
+
+  toEntity() {
+    return ShippingAddressEntity(
+      name: name,
+      phone: phone,
+      address: address,
+      city: city,
+      email: email,
+      floor: floor,
+    );
   }
 }

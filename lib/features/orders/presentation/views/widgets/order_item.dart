@@ -1,10 +1,10 @@
-import 'package:e_commerce_dashboard/features/orders/data/models/order_model.dart';
+import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/order_entity.dart';
 import 'package:flutter/material.dart';
 
 class OrderItemWidget extends StatelessWidget {
-  final OrderModel orderModel;
+  final OrderEntity orderEntity;
 
-  const OrderItemWidget({super.key, required this.orderModel});
+  const OrderItemWidget({super.key, required this.orderEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +17,14 @@ class OrderItemWidget extends StatelessWidget {
           children: [
             // Total Price
             Text(
-              'Total Price: \$${orderModel.totalPrice.toStringAsFixed(2)}',
+              'Total Price: \$${orderEntity.totalPrice.toStringAsFixed(2)}',
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             const SizedBox(height: 8),
 
             // User ID
             Text(
-              'User ID: ${orderModel.uId}',
+              'User ID: ${orderEntity.uId}',
               style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
             const SizedBox(height: 8),
@@ -35,14 +35,14 @@ class OrderItemWidget extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             Text(
-              orderModel.shippingAddressModel.toString(),
+              orderEntity.shippingAddressModel.toString(),
               style: const TextStyle(fontSize: 14),
             ),
             const SizedBox(height: 8),
 
             // Payment Method
             Text(
-              'Payment Method: ${orderModel.paymentMethod}',
+              'Payment Method: ${orderEntity.paymentMethod}',
               style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
             const SizedBox(height: 16),
@@ -55,9 +55,9 @@ class OrderItemWidget extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: orderModel.orderProducts.length,
+              itemCount: orderEntity.orderProducts.length,
               itemBuilder: (context, index) {
-                final product = orderModel.orderProducts[index];
+                final product = orderEntity.orderProducts[index];
                 return ListTile(
                   leading: Image.network(
                     product.imageUrl,

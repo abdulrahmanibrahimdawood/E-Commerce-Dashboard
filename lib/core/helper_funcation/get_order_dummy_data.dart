@@ -18,21 +18,24 @@ OrderEntity getDummyOrder() {
     OrderProductEntity(
       name: 'Product A',
       code: 'A123',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl:
+          'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTyONSJwqfuXtDHXMIgtZXP08vwtGefnnXMtKATggEnnvNdOc6WMbjI-0E6X0eLigWgQHsIbo_I_U-uSRrSsIyQS5mWwaPID_x52P8KqY3yKjVAnUbeAZE_lp__kPKLJRirha-IE29td6P2&s=19',
       price: 49.99,
       quantity: 2,
     ),
     OrderProductEntity(
       name: 'Product B',
       code: 'B456',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl:
+          'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTyONSJwqfuXtDHXMIgtZXP08vwtGefnnXMtKATggEnnvNdOc6WMbjI-0E6X0eLigWgQHsIbo_I_U-uSRrSsIyQS5mWwaPID_x52P8KqY3yKjVAnUbeAZE_lp__kPKLJRirha-IE29td6P2&s=19',
       price: 29.99,
       quantity: 1,
     ),
     OrderProductEntity(
       name: 'Product C',
       code: 'C789',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl:
+          'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTyONSJwqfuXtDHXMIgtZXP08vwtGefnnXMtKATggEnnvNdOc6WMbjI-0E6X0eLigWgQHsIbo_I_U-uSRrSsIyQS5mWwaPID_x52P8KqY3yKjVAnUbeAZE_lp__kPKLJRirha-IE29td6P2&s=19',
       price: 19.99,
       quantity: 3,
     ),

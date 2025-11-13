@@ -1,3 +1,4 @@
+import 'package:e_commerce_dashboard/core/enums/order_enum.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/order_entity.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/order_product_entity.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/shipping_address_entity.dart';
@@ -49,6 +50,7 @@ OrderEntity getDummyOrder() {
 
   // Create and return the OrderModel
   return OrderEntity(
+    status: OrderEnum.pending,
     totalPrice: totalPrice,
     uId: 'user123',
     shippingAddressModel: shippingAddress,

@@ -1,3 +1,4 @@
+import 'package:e_commerce_dashboard/core/enums/order_enum.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/order_product_entity.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/shipping_address_entity.dart';
 
@@ -7,8 +8,10 @@ class OrderEntity {
   final ShippingAddressEntity shippingAddressModel;
   final List<OrderProductEntity> orderProducts;
   final String paymentMethod;
+  final OrderEnum status;
 
   OrderEntity({
+    required this.status,
     required this.totalPrice,
     required this.uId,
     required this.shippingAddressModel,

@@ -23,9 +23,9 @@ class OrderModel {
       shippingAddressModel: ShippingAddressModel.fromJson(
         json['shippingAddressEntity'],
       ),
-      orderProducts: json['orderProducts']
-          .map<OrderProductModel>((e) => OrderProductModel.fromJson(e))
-          .toList(),
+      orderProducts: List<OrderProductModel>.from(
+        json['orderProducts'].map((e) => OrderProductModel.fromJson(e)),
+      ),
       paymentMethod: json['paymentMethod'],
     );
   }

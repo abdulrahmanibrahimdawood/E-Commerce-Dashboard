@@ -17,11 +17,9 @@ class OrderRepoImpl implements OrderRepo {
       final data = await databaseServices.getData(
         path: BackendEndpoints.getOrders,
       );
-      List<OrderEntity> orders =
-          (data as List<dynamic>)
-                  .map((e) => OrderModel.fromJson(e).toEntity())
-                  .toList()
-              as List<OrderEntity>;
+      List<OrderEntity> orders = (data as List<dynamic>)
+          .map<OrderEntity>((e) => OrderModel.fromJson(e).toEntity())
+          .toList();
       return Right(orders);
     } catch (e) {
       return Left(ServerFailure('Failed to fetch orders'));

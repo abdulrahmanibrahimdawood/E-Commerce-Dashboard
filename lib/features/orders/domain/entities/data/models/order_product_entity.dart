@@ -3,7 +3,7 @@ class OrderProductEntity {
   final String name;
   final String imageUrl;
   final int quantity;
-  final double price;
+  final num price;
 
   OrderProductEntity({
     required this.code,

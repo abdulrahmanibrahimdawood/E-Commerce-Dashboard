@@ -5,7 +5,7 @@ class OrderProductModel {
   final String name;
   final String imageUrl;
   final int quantity;
-  final double price;
+  final num price;
 
   OrderProductModel({
     required this.code,

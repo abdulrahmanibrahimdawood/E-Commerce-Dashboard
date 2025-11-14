@@ -32,14 +32,14 @@ class OrderModel {
         json['orderProducts'].map((e) => OrderProductModel.fromJson(e)),
       ),
       paymentMethod: json['paymentMethod'],
-      status: json['states'],
+      status: json['status'],
     );
   }
   toJson() {
     return {
       'totalPrice': totalPrice,
       'uId': uId,
-      'states': 'pending',
+      'status': 'pending',
       'date': DateTime.now().toString(),
       'shippingAddressEntity': shippingAddressModel.toJson(),
       'orderProducts': orderProducts.map((e) => e.toJson()).toList(),

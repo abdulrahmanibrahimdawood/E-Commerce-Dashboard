@@ -74,4 +74,13 @@ class FireStoreServices implements DatabaseServices {
       yield result.docs.map((e) => e.data()).toList();
     }
   }
+
+  @override
+  Future<void> updateData({
+    required String path,
+    required Map<String, dynamic> data,
+    String? documentId,
+  }) async {
+    await firestore.collection(path).doc(documentId).update(data);
+  }
 }

@@ -55,8 +55,8 @@ class OrderModel {
     );
   }
 
-  OrderEnum fetchEnum() {
-    return OrderEnum.values.firstWhere((e) {
+  OrderStatusEnum fetchEnum() {
+    return OrderStatusEnum.values.firstWhere((e) {
       var eNumStatus = e.name.toString();
       return eNumStatus == (status ?? 'pending');
     });

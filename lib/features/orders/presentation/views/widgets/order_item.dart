@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/order_entity.dart';
+import 'package:e_commerce_dashboard/features/orders/presentation/views/widgets/order_action_buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/enums/order_enum.dart';
@@ -115,6 +116,8 @@ class OrderItemWidget extends StatelessWidget {
                 );
               },
             ),
+            const SizedBox(height: 16),
+            OrderActionButtons(orderEntity: orderEntity),
           ],
         ),
       ),

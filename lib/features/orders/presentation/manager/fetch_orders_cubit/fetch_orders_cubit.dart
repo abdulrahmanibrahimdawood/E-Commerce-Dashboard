@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/entities/data/models/order_entity.dart';
 import 'package:e_commerce_dashboard/features/orders/domain/repos/order_repo.dart';
+import 'package:flutter_bloc/flutter_bloc.dart' show Cubit;
 import 'package:meta/meta.dart';
 
 part 'fetch_orders_state.dart';
@@ -19,10 +19,11 @@ class FetchOrdersCubit extends Cubit<FetchOrdersState> {
         (orders) => emit(FetchOrdersSuccess(orders: orders)),
       );
     });
-    @override
-    Future<void> close() {
-      _streamSubscription?.cancel();
-      return super.close();
-    }
+  }
+
+  @override
+  Future<void> close() {
+    _streamSubscription?.cancel();
+    return super.close();
   }
 }

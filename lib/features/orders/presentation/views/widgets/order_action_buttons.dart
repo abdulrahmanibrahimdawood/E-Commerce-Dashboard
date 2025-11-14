@@ -1,4 +1,6 @@
+import 'package:e_commerce_dashboard/features/orders/presentation/manager/update_order_cubit/update_order_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/enums/order_enum.dart';
 import '../../../domain/entities/data/models/order_entity.dart';
@@ -15,16 +17,37 @@ class OrderActionButtons extends StatelessWidget {
       children: [
         Visibility(
           visible: orderEntity.status == OrderStatusEnum.pending,
-          child: ElevatedButton(onPressed: () {}, child: const Text('Accept')),
+          child: ElevatedButton(
+            onPressed: () {
+              context.read<UpdateOrderCubit>().updateOrder(
+                status: OrderStatusEnum.accepted,
+                orderId: orderEntity.orderId,
+              );
+            },
+            child: const Text('Accept'),
+          ),
         ),
         Visibility(
           visible: orderEntity.status == OrderStatusEnum.pending,
-          child: ElevatedButton(onPressed: () {}, child: const Text('Reject')),
+          child: ElevatedButton(
+            onPressed: () {
+              context.read<UpdateOrderCubit>().updateOrder(
+                status: OrderStatusEnum.canceled,
+                orderId: orderEntity.orderId,
+              );
+            },
+            child: const Text('Canceled'),
+          ),
         ),
         Visibility(
           visible: orderEntity.status == OrderStatusEnum.accepted,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              context.read<UpdateOrderCubit>().updateOrder(
+                status: OrderStatusEnum.delivered,
+                orderId: orderEntity.orderId,
+              );
+            },
             child: const Text('Delivered'),
           ),
         ),

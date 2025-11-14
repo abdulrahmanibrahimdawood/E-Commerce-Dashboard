@@ -1,8 +1,8 @@
 import 'package:e_commerce_dashboard/core/repos/images_repo/images_repo.dart';
 import 'package:e_commerce_dashboard/core/repos/products_repo/product_repo.dart';
 import 'package:e_commerce_dashboard/features/add_product/domain/entites/product_entity.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' show Cubit;
-import 'package:meta/meta.dart';
 
 part 'add_product_state.dart';
 

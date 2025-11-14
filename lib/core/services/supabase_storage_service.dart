@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:e_commerce_dashboard/core/services/storage_service.dart';
@@ -38,6 +39,7 @@ class SupabaseStorageService implements StorageService {
     final String publicUrl = _supabase.client.storage
         .from('products_images')
         .getPublicUrl('$path/$fileName.$extensionName');
+    log(publicUrl);
     return result;
   }
 }
